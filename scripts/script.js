@@ -16,7 +16,6 @@ var leftResult = getComputedStyle(leftStyle);
 var leftImage = document.querySelector(".coding-image")
 var imagewrap = document.querySelector(".firstcontentwrap")
 var imageWrapResult = getComputedStyle(imagewrap)
-//console.log(imagewrap.style.width)
 
 var header = document.querySelector(".header");
 var headerResult = getComputedStyle(header);
@@ -25,7 +24,7 @@ var musicHeader = document.querySelector(".music");
 
 
 leftStyle.addEventListener("click", function() {
-    if (leftResult.flex === "1 1 0%" && rightResult.flex === "1 1 0%" || leftStyle.classList.contains("flex") === false) {
+    if (leftResult.flex === "1 1 0%" && rightResult.flex === "1 1 0%" && window.innerWidth >= 800 || leftStyle.classList.contains("flex") === false && window.innerWidth >= 800) {
         rightStyle.style.flex = 0;
         rightStyle.style.width = 0;
         imagewrap.style.height = "140vh"
@@ -34,7 +33,7 @@ leftStyle.addEventListener("click", function() {
         webHeader.style.top = "60vh"
         leftStyle.classList.add("flex")
         musicHeader.style.display = "none"
-    } else if (rightResult.flex === "0 1 0%" && leftResult.flex === "1 1 0%" || leftStyle.classList.contains("flex") === true) {
+    } else if (rightResult.flex === "0 1 0%" && leftResult.flex === "1 1 0%" && window.innerWidth >= 800 || leftStyle.classList.contains("flex" && window.innerWidth >= 800) === true) {
         rightStyle.style.flex = 1;
         rightStyle.style.width = "100%";
         imagewrap.style.height = "100vh";
@@ -43,31 +42,61 @@ leftStyle.addEventListener("click", function() {
         webHeader.style.top = "100px";
         leftStyle.classList.remove("flex")
         musicHeader.style.display = "block"
-    }
+    } else if (leftResult.flex === "1 1 0%" && rightResult.flex === "1 1 0%" && window.innerWidth < 800 || leftStyle.classList.contains("flex") === false && window.innerWidth < 800) {
+        rightStyle.style.flex = 0;
+        rightStyle.style.width = 0;
+        musicHeader.style.display = "none";
+        imagewrap.style.height = "150vh"
+         leftStyle.classList.add("flex")
+    } else if (rightResult.flex === "0 1 0%" && leftResult.flex === "1 1 0%" && window.innerWidth < 800 || leftStyle.classList.contains("flex" && window.innerWidth < 800) === true) {
+         rightStyle.style.flex = 1;
+        rightStyle.style.width = "100%";
+        imagewrap.style.height = "100vh"; 
+         leftStyle.classList.remove("flex")
+        musicHeader.style.display = "block";
+               }
 })
 
 var rightStyle = document.querySelector(".right");
 var rightResult = getComputedStyle(rightStyle);
 
 rightStyle.addEventListener("click", function() {
-    if (rightResult.flex === "1 1 0%"   && leftResult.flex === "1 1 0%" || rightStyle.classList.contains("flex") === false) {
+    if (rightResult.flex === "1 1 0%"   && leftResult.flex === "1 1 0%" && window.innerWidth >= 800 || rightStyle.classList.contains("flex") === false && window.innerWidth >= 800) {
         leftStyle.style.flex = 0;
         leftStyle.style.width = 0; 
         imagewrap.style.height = "140vh"
         imagewrap.style.margin = "-40vh 0 0 0"
         header.style.margin = "40vh 0 0 0"
-         musicHeader.style.top = "60vh"
+        musicHeader.style.top = "60vh"
         rightStyle.classList.add("flex")
         webHeader.style.display = "none"
     } else if (rightResult.flex === "1 1 0%" && leftResult.flex === "0 1 0%" || rightStyle.classList.contains("flex") === true) {
         leftStyle.style.flex = 1;
         leftStyle.style.width = "100%";
-         imagewrap.style.height = "100vh";
+        imagewrap.style.height = "100vh";
         imagewrap.style.margin = "0 0 0 0"
-         header.style.margin = 0
+        header.style.margin = 0
         musicHeader.style.top = "100px"
         rightStyle.classList.remove("flex")
         webHeader.style.display = "block"
+    } else if (rightResult.flex === "1 1 0%" && leftResult.flex === "1 1 0%" && window.innerWidth < 800 || leftStyle.classList.contains("flex") === false && window.innerWidth < 800) {
+        leftStyle.style.flex = 0;
+        leftStyle.style.width = 0; 
+        imagewrap.style.height = "150vh"
+        imagewrap.style.margin = "-50vh 0 0 0"
+        header.style.margin = "50vh 0 0 0"
+        musicHeader.style.top = "20vh"
+        rightStyle.classList.add("flex")
+        webHeader.style.display = "none"  
+    } else if (lefttResult.flex === "0 1 0%" && rightResult.flex === "1 1 0%" && window.innerWidth < 800 || rightStyle.classList.contains("flex" && window.innerWidth < 800) === true) {
+       leftStyle.style.flex = 1;
+        leftStyle.style.width = "100%";
+        imagewrap.style.height = "100vh";
+        imagewrap.style.margin = "0 0 0 0"
+        header.style.margin = 0
+        musicHeader.style.top = "100px"
+        rightStyle.classList.remove("flex")
+        webHeader.style.display = "block" 
     }
 })
 
