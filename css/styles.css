@@ -65,14 +65,14 @@ a {
 header {
     display: flex;
     font-size: 30px;
-    padding: 20px;
+    padding: 20px 20px 20px 20px;
   
     background-color: white;
     
 }
-.hei {
+/*.hei {
     height: 500px;
-}
+}*/
 .logo {
     flex: 1;
 }
@@ -173,16 +173,17 @@ header {
     height: 100vh;
     transition: 0.5s;
     margin: 0 0 0 0;
+    padding: -60px 0 0 0;
 }
 
 .left {
-    background-color: red;
+    
     flex: 1;
     transition: 0.5s;
     width: 100%;
 }
 .right {
-    background-color: blue;
+ 
     flex: 1;
     transition: 0.5s;
     width: 100%;
@@ -219,7 +220,7 @@ header {
     }   
     
    .left {
-       background-color: red;
+      
        flex: 1;
        transition: 0.5s;
        width: 100%;
@@ -227,7 +228,7 @@ header {
 }
  
 .right {
-    background-color: white;
+   
     flex: 1;
     transition: 0.5s;
     width: 100%;
@@ -261,7 +262,7 @@ header {
     height: 100%;
 } 
     header {
-        padding: 20px;
+        
         margin: 0;
         font-size: 20px;
         
