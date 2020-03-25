@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
     background-color: black;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 ol, ul {
 	list-style: none;
@@ -53,6 +54,7 @@ a {
     color: inherit;
 }
 
+
 /* Header
 -------------*/
 .header {
@@ -61,14 +63,12 @@ a {
     transition: 0.5s;
       z-index: 3;
 }
-
 header {
     display: flex;
     font-size: 30px;
     padding: 20px 20px 20px 20px;
-  
-    background-color: white;
-    
+    background-color: black;
+    color: #818181;
 }
 
 .logo {
@@ -78,33 +78,95 @@ header {
     flex: 1;
     float: right;
     display: block;
+   
+}
+
+.nav-elements a {
+    padding: 0 10px 0 5px;
+}
+
+.nav-elements a:hover {
+    opacity: 0.7;
+}
+
+.nav-elements a:active {
+    opacity: 0.3;
+}
+
+/* Overlay menu
+-------------*/
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 4; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+.overlay a:hover, .overlay a:focus, .icon:hover {
+  color: #f1f1f1;
+}
+
+.overlay .closeButton {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 50px;
+}
+
+
+
+.icon {
+  display: none;
+    font-size: 30px;
+    color: #818181;
+    margin: 25px 0px 0 0;
+    
 }
 
 /* Sub headers
 ----------------*/
 .web {
-    color: black;
-     z-index: 2;
+    color: white;
+    background: rgba(0,0,0,0.2);
+    z-index: 2;
     font-size: 50px;
+    border-radius: 50px;
     position: relative;
     top: 100px;
     left: 30px;
     font-weight: 900;
     transition: 0.5s;
     max-width: 400px;
+    padding: 10px;
+    transition: 0.5s;
 }
 .music {
     color: white;
-     z-index: 2;
-    font-size: 50px;
-    position: relative;
-    top: 100px;
-    left: 30px;
-    font-weight: 900;
-    transition: 0.5s;
-    max-width: 400px;
-}
-/*.sub-header {
+    background: rgba(0,0,0,0.2);
+    border-radius: 50px;
     z-index: 2;
     font-size: 50px;
     position: relative;
@@ -112,9 +174,12 @@ header {
     left: 30px;
     font-weight: 900;
     transition: 0.5s;
-}*/
+    max-width: 400px;
+    padding: 10px;
+    transition: 0.5s;
+}
 
-/* Web development text
+/* Web development/music text
 ----------------*/
 #web-text {
     opacity: 0;
@@ -166,66 +231,15 @@ header {
     transition: 0.5s;
     
 }
-
 .index-button:hover {
    cursor: pointer;
-    opacity: 0.7;
-    
+    opacity: 0.7;   
 }
 
-.overlay {
-    height: 100%;
-    width: 0;
-    position: fixed; /* Stay in place */
-    z-index: 4; /* Sit on top */
-    left: 0;
-    top: 0;
-    background-color: rgb(0,0,0); /* Black fallback color */
-    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-}
-
-.overlay-content {
-  position: relative;
-  top: 25%; /* 25% from the top */
-  width: 100%; /* 100% width */
-  text-align: center; /* Centered text/links */
-  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
-}
-
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block; /* Display block instead of inline */
-  transition: 0.3s; /* Transition effects on hover (color) */
-}
-
-.overlay a:hover, .overlay a:focus, .icon:hover {
-  color: #f1f1f1;
-}
-
-.overlay .closeButton {
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-size: 50px;
-}
-
-
-
-.icon {
-  display: none;
-    font-size: 30px;
-    color: black;
-    margin: 25px 0px 0 0;
-    
-}
 .firstpage {
      height: 100vh;
 }
+
 .firstcontentwrap {
     display: flex;
     height: 100vh;
@@ -235,7 +249,6 @@ header {
 }
 
 .left {
-    
     flex: 1;
     transition: 0.5s;
     width: 100%;
@@ -245,67 +258,131 @@ header {
     flex: 1;
     transition: 0.5s;
     width: 100%;
+}
+
+.left:hover, .right:hover {
+    cursor: pointer;
+    opacity: 0.9;
 }
 
 .image {
     width: 100%;
-    height: 100%;
+    height: 100%;    
+}
+
+/* Web developer page
+-------------------*/
+
+.web-content {
     
 }
 
+.web-content-wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+.web-content-1 {
+    flex: 1;
+    background-color: red;
+    height: 300px;
+    
+}
+
+.web-content-2 {
+    flex: 1;
+    background-color: blue;
+    height: 300px;
+}
+
+/* Music production page
+-------------------*/
+
+#music-content {
+   padding: 200px 0 0 0; 
+}
+
+.music-content-wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+.music-content-1 {
+    flex: 2;
+    z-index: 5;
+    height: 400px;
+    padding: 100px 0 0 0;
+}
+
+.music-content-2 {
+    flex: 1;
+    background-color: blue;
+    height: 300px;
+}
+
+/* Smaller screens
+-------------------*/
 @media screen and (max-width: 800px) {
-    .header {
-        
-    }
- a.icon {
-    float: right;
-    display: block;
-      position:absolute;
-     padding: 20px;
-    right: 0;
-    top: 0;
-     margin: 0;
-     
-  }
-   
-    .nav-elements {
-        display: none;
+ 
+    
+/* Smaller header
+-------------------*/ 
+.header {
+}  
+header {       
+    margin: 0;
+    font-size: 20px;        
+}
+.nav-elements {
+    display: none;
     }
     
-    .firstcontentwrap {
-        flex-direction: column;
-        height: 100vh;
+ a.icon {
+     float: right;  
+     display: block;
+     position:absolute;
+     padding: 20px;
+     right: 0;
+     top: 0;
+     margin: 0;   
+  }
+ 
+/* Index page - smaller screen
+-------------------*/     
+    
+.firstcontentwrap {
+    flex-direction: column;
+    height: 100vh;
     }   
     
-   .left {
-      
-       flex: 1;
-       transition: 0.5s;
-       width: 100%;
-       height: 50vh     
+.left {      
+    flex: 1;
+    transition: 0.5s;
+    width: 100%;
+    height: 50vh     
 }
  
 .right {
-   
     flex: 1;
     transition: 0.5s;
     width: 100%;
     height: 50vh;
    
 }    
-    
+ 
+/* Sub headers smaller screen
+----------------*/      
  .web {
      font-size: 20px;
      position: relative;
      top: 100px;
-    left: 30px;
-    font-weight: 900;
-    transition: 0.5s;
-    max-width: 250px;
-     color: white;
+     left: 30px;
+     font-weight: 900;  
+     transition: 0.5s;
+     max-width: 250px;
     }
-    .music {
-       font-size: 20px;
+.music {
+    font-size: 20px;
     position: relative;
     top: 100px;
     left: 30px;
@@ -319,19 +396,14 @@ header {
     width: 100%;
     height: 100%;
 } 
-    header {
-        
-        margin: 0;
-        font-size: 20px;
-        
-    }
-    
-    .index-text {
+
+/* Index text smaller screen
+----------------*/    
+.index-text {
     position: absolute;
     top: 180px;
-        max-width: 40vh;
-        min-width: 20vh;
-    
+    max-width: 40vh;
+    min-width: 20vh;    
     margin: 0 20px;
     border-radius: 20px;
     background: rgba(255,255,255,0.9)
@@ -339,7 +411,7 @@ header {
 .p-text {
     transition: 0.5s;
     padding: 20px 20px 5px 20px;
-    font-size: 20px;
+    font-size: 15px;
 }
 .p-text:last-child {
     padding-bottom: 20px;
@@ -357,7 +429,7 @@ header {
     padding: 20px;
     border-radius: 20px;
     transition: 0.5s;
-    
+    font-size: 15px;
 }
 
 .index-button:hover {
@@ -366,19 +438,9 @@ header {
     
 }
     
-    .web {
+/*.web {
     color: black;
-     z-index: 2;
-    font-size: 40px;
-    position: relative;
-    top: 80px;
-    left: 30px;
-    max-width: 300px;
-        font-size: 25px;
-}
-.music {
-    color: black;
-     z-index: 2;
+    z-index: 2;
     font-size: 40px;
     position: relative;
     top: 80px;
@@ -386,6 +448,16 @@ header {
     max-width: 300px;
     font-size: 25px;
 }
+.music {
+    color: black;
+    z-index: 2;
+    font-size: 40px;
+    position: relative;
+    top: 80px;
+    left: 30px;
+    max-width: 300px;
+    font-size: 25px;
+}*/
     
 }
 
