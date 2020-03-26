@@ -38,6 +38,7 @@ leftStyle.addEventListener("click", function() {
         musicHeader.style.display = "none"
         webText.style.opacity = 1
         webButton.style.opacity = 1
+        musicButton.style.display = "none"
     } else if (rightResult.flex === "0 1 0%" && leftResult.flex === "1 1 0%" && window.innerWidth >= 800 || leftStyle.classList.contains("flex" && window.innerWidth >= 800) === true) {
         rightStyle.style.flex = 1;
         rightStyle.style.width = "100%";
@@ -49,6 +50,7 @@ leftStyle.addEventListener("click", function() {
         musicHeader.style.display = "block"
         webText.style.opacity = 0
         webButton.style.opacity = 0
+        musicButton.style.display = "block"
     } else if (leftResult.flex === "1 1 0%" && rightResult.flex === "1 1 0%" && window.innerWidth < 800 || leftStyle.classList.contains("flex") === false && window.innerWidth < 800) {
         rightStyle.style.flex = 0;
         rightStyle.style.width = 0;
@@ -57,6 +59,7 @@ leftStyle.addEventListener("click", function() {
          leftStyle.classList.add("flex");
        webText.style.opacity = 1
         webButton.style.opacity = 1
+        musicButton.style.display = "none"
     } else if (rightResult.flex === "0 1 0%" && leftResult.flex === "1 1 0%" && window.innerWidth < 800 || leftStyle.classList.contains("flex" && window.innerWidth < 800) === true) {
          rightStyle.style.flex = 1;
         rightStyle.style.width = "100%";
@@ -65,6 +68,7 @@ leftStyle.addEventListener("click", function() {
         musicHeader.style.display = "block";
        webText.style.opacity = 0
         webButton.style.opacity = 0
+        musicButton.style.display = "block"
                }
 })
 

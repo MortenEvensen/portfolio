@@ -273,26 +273,97 @@ header {
 /* Web developer page
 -------------------*/
 
-.web-content {
-    
+#web-content {
+    background-image: url(../images/coding.jpg);
+    background-size:cover;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.1);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 10vw;
 }
 
 .web-content-wrap {
     display: flex;
     flex-direction: row;
+    
+    
 }
 
 .web-content-1 {
     flex: 1;
-    background-color: red;
-    height: 300px;
+    background: rgba(0,0,0,0.8);
+    opacity: 1;
+    height: 100%;
+    margin: 20vh 10vh 20vh 10vw;
+    padding: 0 0 50px 0;
+    color: white;
     
 }
 
-.web-content-2 {
+
+
+.web-content-wrap h2 {
+    padding: 20px;
+    font-size: 50px;
+    
+    
+}
+
+.web-content-wrap p:first-of-type {
+    padding: 20px 0 0 20px;
+}
+
+.web-content-wrap p:last-of-type {
+    text-align: center;
+}
+
+.web-content-wrap p {
+    padding: 10px 0 0 20px;
+}
+
+.work-wrap {
+    display: flex;
+}
+
+.work1, .work2, .work3 {
     flex: 1;
-    background-color: blue;
-    height: 300px;
+    height: 100%;
+    min-height: 200px;
+    background-color: white;
+    color: black;
+    margin: 40px 20px 20px 20px;
+    padding: 20px;
+}
+
+.web-button-web {
+    background-color: black;
+    color: #818181;
+    display: block;
+    margin: 15px;
+    padding: 10px 5px 5px 5px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.web-button-web:hover, .web-button-web:hover, .web-button-web:hover {
+   opacity: 0.7;
+    cursor: pointer;
+}
+
+.web-button-web:active, .web-button-web:active, .web-button-web:active {
+   opacity: 0.2;
+}
+
+.work-wrap h3 {
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.work-wrap h4 {
+    text-align: center;
 }
 
 /* Music production page
