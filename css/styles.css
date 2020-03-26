@@ -28,6 +28,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+html {
+    scroll-behavior: smooth;
+}
 body {
 	line-height: 1;
     background-color: black;
@@ -366,6 +370,90 @@ header {
     text-align: center;
 }
 
+/* Got page
+-------------------*/
+
+#got-wrap {
+    display: flex;
+    height: 100vh;
+    border: 2px solid #818181; 
+}
+
+#got-a, #space-a {
+   
+    height: 60px; /* fixed header height*/
+  margin: -60px 0 0; /* negative fixed header height */
+}
+
+.got-flex {
+    flex: 1;
+    
+}
+
+.got-flex h2 {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: 900;
+    padding: 20px 30px 20px 30px
+}
+
+.got-img-wrap {
+   text-align: center;
+    margin: 20px;
+}
+
+.got-img {
+    width: 50%;
+    height: auto;
+    
+    
+}
+
+.got-text p{
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+.go-to-button-wrap {
+    text-align: center;
+    
+}
+
+
+
+.go-to-button {
+    color: black;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.go-to-button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.go-to-button:active {
+    opacity: 0.2;
+}
+
+#spacex-wrap {
+    display: flex;
+    height: 100vh;
+    border: 2px solid #818181; 
+    background-color: #818181
+}
+
+.space-img {
+    width: 50%;
+    height: auto;
+    
+    
+}
 /* Music production page
 -------------------*/
 
