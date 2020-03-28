@@ -188,21 +188,25 @@ header {
 #web-text {
     opacity: 0;
     transition: 0.5s;
+    
 }
 
 #web-button {
     opacity: 0;
     transition: 2s;
+    
 }
 
 #music-text {
     opacity: 0;
     transition: 0.5s;
+    
 }
 
 #music-button {
     opacity: 0;
-    transition: 2s;
+    transition: 1s;
+   
 }
 
 .index-text {
@@ -255,13 +259,13 @@ header {
 .left {
     flex: 1;
     transition: 0.5s;
-    width: 100%;
+    
 }
 .right {
  
     flex: 1;
     transition: 0.5s;
-    width: 100%;
+   
 }
 
 .left:hover, .right:hover {
@@ -270,8 +274,8 @@ header {
 }
 
 .image {
-    width: 100%;
-    height: 100%;    
+    width: 100%; 
+    height: 100%;
 }
 
 /* Web developer page
@@ -409,7 +413,6 @@ header {
     
     
 }
-
 .got-text p{
     color: white;
     font-size: 20px;
@@ -422,15 +425,11 @@ header {
     text-align: center;
     
 }
-
-
-
 .go-to-button {
     color: black;
     background-color: white;
     padding: 10px 20px;
-    border-radius: 10px;
-   
+    border-radius: 10px;   
 }
 
 .go-to-button-wrap-1 {
@@ -460,11 +459,14 @@ header {
     background-color: #818181
 }
 
+ #decor-wrap {
+         display: flex;
+    height: 100vh;
+    }
+
 .space-img {
     width: 50%;
-    height: auto;
-    
-    
+    height: auto;    
 }
 /* Music production page
 -------------------*/
@@ -512,7 +514,7 @@ header {
      float: right;  
      display: block;
      position:absolute;
-     padding: 20px;
+     padding: 15px;
      right: 0;
      top: 0;
      margin: 0;   
@@ -521,26 +523,44 @@ header {
 /* Index page - smaller screen
 -------------------*/     
     
+    .firstpage {
+        height: 100vh;
+        
+    }
+    
 .firstcontentwrap {
     flex-direction: column;
     height: 100vh;
+    max-height: 100vh;
     }   
     
 .left {      
     flex: 1;
     transition: 0.5s;
-    width: 100%;
-    height: 50vh     
+   
+    
 }
  
 .right {
     flex: 1;
     transition: 0.5s;
-    width: 100%;
-    height: 50vh;
+    
    
 }    
  
+#music-text {
+    transition: 0.5s;
+    margin-left: -1000px;
+    display: none;
+    z-index: -1;
+}
+
+#music-button {
+   
+   z-index: -1;
+   display: none;
+}    
+    
 /* Sub headers smaller screen
 ----------------*/      
  .web {
@@ -564,8 +584,9 @@ header {
     
 
 .image {
+   height: 100%;
     width: 100%;
-    height: 100%;
+    
 } 
 
 /* Index text smaller screen
@@ -577,7 +598,8 @@ header {
     min-width: 20vh;    
     margin: 0 20px;
     border-radius: 20px;
-    background: rgba(255,255,255,0.9)
+    background: rgba(255,255,255,0.9);
+   
 }
 .p-text {
     transition: 0.5s;
@@ -608,6 +630,165 @@ header {
     opacity: 0.7;
     
 }
+  
+/* Web developer page - smaller screens
+-------------------*/
+
+#web-content {
+    margin: 0 0vw;
+}
+
+.web-content-wrap {
+    display: flex;
+    flex-direction: row;  
+}
+
+.web-content-1 {
+    height: 100%;
+    margin: 8vh 0vh 15vh 0vw;
+    padding: 0 0 50px 0;
+    
+}
+
+.web-content-wrap h2 {
+    padding: 20px;
+    font-size: 20px;  
+}
+
+.web-content-wrap p:first-of-type {
+    padding: 10px 0 0 20px;
+}
+
+.web-content-wrap p:last-of-type {
+    text-align: left;
+}
+
+.web-content-wrap p {
+    padding: 10px 0 0 20px;
+    font-size: 16px;
+}
+
+.work-wrap {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.work1, .work2, .work3 {
+    height: 100%;
+    margin: 20px 20px 10px 20px;
+    padding: 0px;
+    min-height: 100px;
+    border-radius: 10px;
+}
+
+.web-button-web {
+    display:inline-block;
+    margin: 10px 5px 10px 5px;
+    padding: 10px 5px 10px 5px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 80%;
+}
+    
+
+
+.work-wrap h3 {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.work-wrap h4 {
+    text-align: center;
+}
+
+/* Got page
+-------------------*/
+
+#got-wrap {
+    display: flex;
+    height: 100vh;
+    border: 2px solid #818181; 
+}
+
+#got-a, #space-a, #decor-a {
+   
+    height: 60px; /* fixed header height*/
+  margin: -60px 0 0; /* negative fixed header height */
+}
+
+.got-flex {
+}
+
+.got-flex h2 {
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    font-weight: 900;
+    padding: 20px 10px 10px 10px
+}
+
+.got-img-wrap {
+   text-align: center;
+    margin: 5px 5px 15px 5px;
+}
+
+.got-img {
+    height: 70px;
+    width: 70%;
+    
+}
+.got-text p{
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+.go-to-button-wrap, .go-to-button-wrap-1, .go-to-button-wrap-2 {
+    text-align: center;
+    
+}
+.go-to-button {
+    padding: 5px 5px;
+    border-radius: 10px;   
+}
+
+.go-to-button-wrap-1 {
+   margin-top: 10px;
+}
+.go-to-button-wrap-2 {
+   margin-top: 30px;
+}
+
+.go-to-button-wrap-2 a {
+    margin-right: 10px;
+}
+
+.go-to-button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.go-to-button:active {
+    opacity: 0.2;
+}
+
+#spacex-wrap {
+    display: flex;
+    height: 100vh;
+    border: 2px solid #818181; 
+    background-color: #818181
+}
+
+    
+.space-img {
+    width: 80%;
+    height: auto;    
+}    
     
 /*.web {
     color: black;

@@ -13,6 +13,9 @@ function closeNav() {
 /* Open and close fullscreen size windows on index page */
 var leftStyle = document.querySelector(".left");
 var leftResult = getComputedStyle(leftStyle);
+var rightStyle = document.querySelector(".right");
+var rightResult = getComputedStyle(rightStyle);
+
 var leftImage = document.querySelector(".coding-image")
 var imagewrap = document.querySelector(".firstcontentwrap")
 var imageWrapResult = getComputedStyle(imagewrap)
@@ -38,7 +41,7 @@ leftStyle.addEventListener("click", function() {
         musicHeader.style.display = "none"
         webText.style.opacity = 1
         webButton.style.opacity = 1
-        musicButton.style.display = "none"
+        
     } else if (rightResult.flex === "0 1 0%" && leftResult.flex === "1 1 0%" && window.innerWidth >= 800 || leftStyle.classList.contains("flex" && window.innerWidth >= 800) === true) {
         rightStyle.style.flex = 1;
         rightStyle.style.width = "100%";
@@ -50,30 +53,26 @@ leftStyle.addEventListener("click", function() {
         musicHeader.style.display = "block"
         webText.style.opacity = 0
         webButton.style.opacity = 0
-        musicButton.style.display = "block"
+        
     } else if (leftResult.flex === "1 1 0%" && rightResult.flex === "1 1 0%" && window.innerWidth < 800 || leftStyle.classList.contains("flex") === false && window.innerWidth < 800) {
         rightStyle.style.flex = 0;
         rightStyle.style.width = 0;
         musicHeader.style.display = "none";
-        imagewrap.style.height = "150vh"
+        //imagewrap.style.height = "100vh"
          leftStyle.classList.add("flex");
-       webText.style.opacity = 1
+        webText.style.opacity = 1
         webButton.style.opacity = 1
-        musicButton.style.display = "none"
     } else if (rightResult.flex === "0 1 0%" && leftResult.flex === "1 1 0%" && window.innerWidth < 800 || leftStyle.classList.contains("flex" && window.innerWidth < 800) === true) {
-         rightStyle.style.flex = 1;
+        rightStyle.style.flex = 1;
         rightStyle.style.width = "100%";
-        imagewrap.style.height = "100vh"; 
-         leftStyle.classList.remove("flex")
+       // imagewrap.style.height = "100vh"; 
+        leftStyle.classList.remove("flex")
         musicHeader.style.display = "block";
-       webText.style.opacity = 0
+        webText.style.opacity = 0
         webButton.style.opacity = 0
-        musicButton.style.display = "block"
                }
 })
 
-var rightStyle = document.querySelector(".right");
-var rightResult = getComputedStyle(rightStyle);
 
 rightStyle.addEventListener("click", function() {
     if (rightResult.flex === "1 1 0%"   && leftResult.flex === "1 1 0%" && window.innerWidth >= 800 || rightStyle.classList.contains("flex") === false && window.innerWidth >= 800) {
@@ -87,6 +86,8 @@ rightStyle.addEventListener("click", function() {
         webHeader.style.display = "none"
           musicText.style.opacity = 1
         musicButton.style.opacity = 1
+        
+        
     } else if (rightResult.flex === "1 1 0%" && leftResult.flex === "0 1 0%" || rightStyle.classList.contains("flex") === true) {
         leftStyle.style.flex = 1;
         leftStyle.style.width = "100%";
@@ -98,21 +99,28 @@ rightStyle.addEventListener("click", function() {
         webHeader.style.display = "block"
          musicText.style.opacity = 0
         musicButton.style.opacity = 0
+
     } else if (rightResult.flex === "1 1 0%" && leftResult.flex === "1 1 0%" && window.innerWidth < 800 || leftStyle.classList.contains("flex") === false && window.innerWidth < 800) {
         leftStyle.style.flex = 0;
         leftStyle.style.width = 0; 
-        imagewrap.style.height = "150vh"
-        imagewrap.style.margin = "-50vh 0 0 0"
-        header.style.margin = "50vh 0 0 0"
+        //imagewrap.style.height = "100vh"
+        
+        imagewrap.style.margin = "0 0 0 0"
+        header.style.margin = "0 0 0 0"
         //musicHeader.style.top = "20vh"
         rightStyle.classList.add("flex")
         webHeader.style.display = "none" 
          musicText.style.opacity = 1
         musicButton.style.opacity = 1
+        musicButton.style.zIndex = 1;
+        musicText.style.zIndex = 1
+         musicButton.style.display = "block"
+        musicText.style.display = "block"
+        musicText.style.marginLeft = "20px";
     } else if (lefttResult.flex === "0 1 0%" && rightResult.flex === "1 1 0%" && window.innerWidth < 800 || rightStyle.classList.contains("flex" && window.innerWidth < 800) === true) {
        leftStyle.style.flex = 1;
         leftStyle.style.width = "100%";
-        imagewrap.style.height = "100vh";
+        //imagewrap.style.height = "100vh";
         imagewrap.style.margin = "0 0 0 0"
         header.style.margin = 0
         musicHeader.style.top = "100px"
@@ -120,6 +128,11 @@ rightStyle.addEventListener("click", function() {
         webHeader.style.display = "block" 
          musicText.style.opacity = 0
         musicButton.style.opacity = 0
+        musicButton.style.zIndex = -1;
+        musicText.style.zIndex = -1
+        musicButton.style.display = "none"
+        musicText.style.display = "none"
+        musicText.style.marginLeft = "-1000px";
     }
 })
 
