@@ -293,7 +293,7 @@ header {
 -------------------*/
 
 #web-content {
-    background-image: url(../images/coding.jpg);
+    background-image: url(../images/coding-min.jpg);
     background-size:cover;
     height: 100vh;
     background-color: rgba(0,0,0,0.1);
@@ -448,6 +448,7 @@ header {
 }
 .go-to-button-wrap-2 {
    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .go-to-button-wrap-2 a {
