@@ -379,7 +379,7 @@ header {
     border: 2px solid #818181; 
 }
 
-#got-a, #space-a {
+#got-a, #space-a, #decor-a {
    
     height: 60px; /* fixed header height*/
   margin: -60px 0 0; /* negative fixed header height */
@@ -418,7 +418,7 @@ header {
     margin: 10px 0 0 0;
 }
 
-.go-to-button-wrap {
+.go-to-button-wrap, .go-to-button-wrap-1, .go-to-button-wrap-2 {
     text-align: center;
     
 }
@@ -430,6 +430,18 @@ header {
     background-color: white;
     padding: 10px 20px;
     border-radius: 10px;
+   
+}
+
+.go-to-button-wrap-1 {
+   margin-top: 10px;
+}
+.go-to-button-wrap-2 {
+   margin-top: 40px;
+}
+
+.go-to-button-wrap-2 a {
+    margin-right: 25px;
 }
 
 .go-to-button:hover {
