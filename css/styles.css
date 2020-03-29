@@ -3,19 +3,87 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,27 +92,40 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
-
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 body {
 	line-height: 1;
-    background-color: black;
-    font-family: 'Source Sans Pro', sans-serif;
+	background-color: black;
+	font-family: 'Source Sans Pro', sans-serif;
 }
-ol, ul {
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
@@ -52,1159 +133,1001 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 a {
-    text-decoration: none;
-    color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
-
-
 /* Header
 -------------*/
-.header {
-    position: fixed;
-    width: 100%;
-    transition: 0.5s;
-      z-index: 3;
+
+#header {
+	position: fixed;
+	width: 100%;
+	transition: 0.5s;
+	z-index: 3;
 }
 header {
-    display: flex;
-    font-size: 30px;
-    padding: 20px 20px 20px 20px;
-    background-color: black;
-    color: #818181;
+	display: flex;
+	font-size: 30px;
+	padding: 20px 20px 20px 20px;
+	background-color: black;
+	color: #818181;
 }
-
 .logo {
-    flex: 1;
+	flex: 1;
 }
 .nav-elements {
-    flex: 1;
-    float: right;
-    display: block;
-   
+	flex: 1;
+	float: right;
+	display: block;
 }
-
 .nav-elements a {
-    padding: 0 10px 0 5px;
+	padding: 0 10px 0 5px;
 }
-
 .nav-elements a:hover {
-    opacity: 0.7;
+	opacity: 0.7;
 }
-
 .nav-elements a:active {
-    opacity: 0.3;
+	opacity: 0.3;
 }
-
 /* Overlay menu
 -------------*/
+
 .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed; /* Stay in place */
-    z-index: 4; /* Sit on top */
-    left: 0;
-    top: 0;
-    background-color: rgb(0,0,0); /* Black fallback color */
-    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 4;
+	left: 0;
+	top: 0;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.9);
+	overflow-x: hidden;
+	transition: 0.5s;
 }
-
 .overlay-content {
-  position: relative;
-  top: 25%; /* 25% from the top */
-  width: 100%; /* 100% width */
-  text-align: center; /* Centered text/links */
-  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+	position: relative;
+	top: 25%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
 }
-
 .overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block; /* Display block instead of inline */
-  transition: 0.3s; /* Transition effects on hover (color) */
+	padding: 8px;
+	text-decoration: none;
+	font-size: 36px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
 }
-
-.overlay a:hover, .overlay a:focus, .icon:hover {
-  color: #f1f1f1;
+.overlay a:hover,
+.overlay a:focus,
+.icon:hover {
+	color: #f1f1f1;
 }
-
 .overlay .closeButton {
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-size: 50px;
+	position: absolute;
+	top: 10px;
+	right: 25px;
+	font-size: 50px;
 }
-
-
-
 .icon {
-  display: none;
-    font-size: 30px;
-    color: #818181;
-    margin: 25px 0px 0 0;
-    
+	display: none;
+	font-size: 30px;
+	color: #818181;
+	margin: 25px 0px 0 0;
 }
-
 /* Sub headers
 ----------------*/
-.web {
-    color: white;
-    background: rgba(0,0,0,0.2);
-    z-index: 2;
-    font-size: 40px;
-    border-radius: 50px;
-    position: relative;
-    top: 100px;
-    left: 30px;
-    font-weight: 900;
-    transition: 0.5s;
-    max-width: 400px;
-    padding: 10px;
-    transition: 0.5s;
-}
 
-.music {
-    color: white;
-    background: rgba(0,0,0,0.2);
-    border-radius: 50px;
-    z-index: 2;
-    font-size: 40px;
-    position: relative;
-    top: 100px;
-    left: 30px;
-    font-weight: 900;
-    transition: 0.5s;
-    max-width: 400px;
-    padding: 10px;
-    transition: 0.5s;
+#web {
+	color: white;
+	background: rgba(0, 0, 0, 0.2);
+	z-index: 2;
+	font-size: 40px;
+	border-radius: 50px;
+	position: relative;
+	top: 100px;
+	left: 30px;
+	font-weight: 900;
+	transition: 0.5s;
+	max-width: 400px;
+	padding: 10px;
+	transition: 0.5s;
 }
-
+#music {
+	color: white;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 50px;
+	z-index: 2;
+	font-size: 40px;
+	position: relative;
+	top: 100px;
+	left: 30px;
+	font-weight: 900;
+	transition: 0.5s;
+	max-width: 400px;
+	padding: 10px;
+	transition: 0.5s;
+}
+.center {
+	text-align: center;
+}
 /* Web development/music text
 ----------------*/
+
 #web-text {
-    opacity: 0;
-   margin-left: -1000px;
-    transition: 0.5s;
-    
+	transition: 0.5s;
+	opacity: 0;
+	margin-left: -3000px;
 }
-
 #web-button {
-    opacity: 0;
-    margin-left: -1000px;
-    transition: 1s;
-   
-
+	transition: 1s;
+	opacity: 0;
+	margin-left: -3000px;
 }
-
 #music-text {
-    opacity: 0;
-    margin-left: -1000px;
-    transition: 0.5s;
-
+	transition: 0.5s;
+	opacity: 0;
+	margin-left: -3000px;
 }
-
 #music-button {
-    opacity: 0;
-    margin-left: -1000px;
-    transition: 1s;
-   
+	transition: 1s;
+	opacity: 0;
+	margin-left: -3000px;
 }
-
 .index-text {
-    position: absolute;
-    top: 300px;
-    width: 50vh;
-    margin: 0 20px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.8)
+	position: absolute;
+	top: 300px;
+	width: 50vh;
+	margin: 0 20px;
+	border-radius: 20px;
+	background: rgba(255, 255, 255, 0.8)
 }
 .p-text {
-    transition: 0.5s;
-    padding: 20px 20px 5px 20px;
-    font-size: 20px;
+	transition: 0.5s;
+	padding: 20px 20px 5px 20px;
+	font-size: 20px;
 }
 .p-text:last-child {
-    padding-bottom: 20px;
+	padding-bottom: 20px;
 }
-
-.web-button, .music-button {
-    position: absolute;
-    top: 90vh;
-    left: 40vw
-    
+.web-button,
+.music-button {
+	position: absolute;
+	top: 90vh;
+	left: 40vw
 }
 .index-button {
-    background-color: white;
-    padding: 20px;
-    border-radius: 20px;
-    transition: 0.5s;
-    
+	background-color: white;
+	padding: 20px;
+	border-radius: 20px;
+	transition: 0.5s;
 }
 .index-button:hover {
-   cursor: pointer;
-    opacity: 0.7;   
+	cursor: pointer;
+	opacity: 0.7;
 }
-
-.firstpage {
-     
-    
+.firstpage {} #firstcontentwrap {
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+	transition: 0.5s;
+	margin: 0 0 0 0;
+	padding: -60px 0 0 0;
 }
-
-.firstcontentwrap {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    transition: 0.5s;
-    margin: 0 0 0 0;
-    padding: -60px 0 0 0;
+#left {
+	flex: 1;
+	transition: 0.5s;
+	width: 100%;
 }
-
-.left {
-    flex: 1;
-    transition: 0.5s;
-    width: 100%;
-    
+#right {
+	flex: 1;
+	transition: 0.5s;
+	width: 100%;
 }
-.right {
- 
-    flex: 1;
-    transition: 0.5s;
-     width: 100%;
-    
-   
+#left:hover,
+#right:hover {
+	cursor: pointer;
+	opacity: 0.9;
 }
-
-.left:hover, .right:hover {
-    cursor: pointer;
-    opacity: 0.9;
-}
-
 .image {
-   width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
-
 /* Web developer page
 -------------------*/
 
 #web-content {
-    background-image: url(../images/coding-min.jpg);
-    background-size:cover;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.1);
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0 10vw;
+	background-image: url(../images/coding-min.jpg);
+	background-size: cover;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.1);
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0 10vw;
 }
-
 .web-content-wrap {
-    display: flex;
-    flex-direction: row;
-    
-    
+	display: flex;
+	flex-direction: row;
 }
-
 .web-content-1 {
-    flex: 1;
-    background: rgba(0,0,0,0.8);
-    opacity: 1;
-    height: 100%;
-    margin: 20vh 10vh 20vh 10vw;
-    padding: 0 0 50px 0;
-    color: white;
-    
+	flex: 1;
+	background: rgba(0, 0, 0, 0.8);
+	opacity: 1;
+	height: 100%;
+	margin: 20vh 10vh 20vh 10vw;
+	padding: 0 0 50px 0;
+	color: white;
 }
-
-
-
 .web-content-wrap h2 {
-    padding: 20px;
-    font-size: 50px;
-    
-    
+	padding: 20px;
+	font-size: 50px;
 }
-
 .web-content-wrap p:first-of-type {
-    padding: 20px 0 0 20px;
+	padding: 20px 0 0 20px;
 }
-
 .web-content-wrap p:last-of-type {
-    text-align: center;
+	text-align: center;
 }
-
 .web-content-wrap p {
-    padding: 10px 0 0 20px;
+	padding: 10px 0 0 20px;
 }
-
 .work-wrap {
-    display: flex;
+	display: flex;
 }
-
-.work1, .work2, .work3 {
-    flex: 1;
-    height: 100%;
-    min-height: 200px;
-    background-color: white;
-    color: black;
-    margin: 40px 20px 20px 20px;
-    padding: 20px;
+.work1,
+.work2,
+.work3 {
+	flex: 1;
+	height: 100%;
+	min-height: 200px;
+	background-color: white;
+	color: black;
+	margin: 40px 20px 20px 20px;
+	padding: 20px;
 }
-
 .web-button-web {
-    background-color: black;
-    color: #818181;
-    display: block;
-    margin: 15px;
-    padding: 10px 5px 5px 5px;
-    text-align: center;
-    border-radius: 10px;
+	background-color: black;
+	color: #818181;
+	display: block;
+	margin: 15px;
+	padding: 10px 5px 5px 5px;
+	text-align: center;
+	border-radius: 10px;
 }
-
-.web-button-web:hover, .web-button-web:hover, .web-button-web:hover {
-   opacity: 0.7;
-    cursor: pointer;
+.web-button-web:hover {
+	opacity: 0.7;
+	cursor: pointer;
 }
-
-.web-button-web:active, .web-button-web:active, .web-button-web:active {
-   opacity: 0.2;
+.web-button-web:active {
+	opacity: 0.2;
 }
-
 .work-wrap h3 {
-    text-align: center;
-    padding: 20px;
-    font-size: 20px;
-    font-weight: 900;
+	text-align: center;
+	padding: 20px;
+	font-size: 20px;
+	font-weight: 900;
 }
-
 .work-wrap h4 {
-    text-align: center;
+	text-align: center;
 }
-
 /* Got page
 -------------------*/
 
 #got-wrap {
-    display: flex;
-    height: 100vh;
-    border: 2px solid #818181; 
+	display: flex;
+	height: 100vh;
+	border: 2px solid #818181;
 }
-
-#got-a, #space-a, #decor-a {
-   
-    height: 60px; /* fixed header height*/
-  margin: -60px 0 0; /* negative fixed header height */
+#got-a,
+#space-a,
+#decor-a {
+	height: 60px;
+	margin: -60px 0 0;
 }
-
 .got-flex {
-    flex: 1;
-    
+	flex: 1;
 }
-
 .got-flex h2 {
-    text-align: center;
-    color: white;
-    font-size: 40px;
-    font-weight: 900;
-    padding: 20px 30px 20px 30px
+	text-align: center;
+	color: white;
+	font-size: 40px;
+	font-weight: 900;
+	padding: 20px 30px 20px 30px
 }
-
 .got-img-wrap {
-   text-align: center;
-    margin: 20px;
+	text-align: center;
+	margin: 20px;
 }
-
 .got-img {
-    width: 50%;
-    height: auto;
-    
-    
+	width: 50%;
+	height: auto;
 }
-.got-text p{
-    color: white;
-    font-size: 20px;
-    padding: 5px;
-    text-align: center;
-    margin: 10px 0 0 0;
+.got-text p {
+	color: white;
+	font-size: 20px;
+	padding: 5px;
+	text-align: center;
+	margin: 10px 0 0 0;
 }
-
-.go-to-button-wrap, .go-to-button-wrap-1, .go-to-button-wrap-2 {
-    text-align: center;
-    
+.go-to-button-wrap,
+.go-to-button-wrap-1,
+.go-to-button-wrap-2 {
+	text-align: center;
 }
 .go-to-button {
-    color: black;
-    background-color: white;
-    padding: 10px 20px;
-    border-radius: 10px;   
+	color: black;
+	background-color: white;
+	padding: 10px 20px;
+	border-radius: 10px;
 }
-
 .go-to-button-wrap-1 {
-   margin-top: 10px;
+	margin-top: 10px;
 }
 .go-to-button-wrap-2 {
-   margin-top: 40px;
-    margin-bottom: 20px;
+	margin-top: 40px;
+	margin-bottom: 20px;
 }
-
 .go-to-button-wrap-2 a {
-    margin-right: 25px;
+	margin-right: 25px;
 }
-
 .go-to-button:hover {
-    cursor: pointer;
-    opacity: 0.7;
+	cursor: pointer;
+	opacity: 0.7;
 }
-
 .go-to-button:active {
-    opacity: 0.2;
+	opacity: 0.2;
 }
-
 #spacex-wrap {
-    display: flex;
-    height: 100vh;
-    border: 2px solid #818181; 
-    background-color: #818181
+	display: flex;
+	height: 100vh;
+	border: 2px solid #818181;
+	background-color: #818181
 }
-
- #decor-wrap {
-         display: flex;
-    height: 100vh;
-    }
-
+#decor-wrap {
+	display: flex;
+	height: 100vh;
+}
 .space-img {
-    width: 50%;
-    height: auto;    
+	width: 50%;
+	height: auto;
 }
 /* Music production page
 -------------------*/
+
 .bg-music-image {
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1) ), url('../images/music-production-grey-min.jpg');
-    height: 120vh;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: black;
-    
-    
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url('../images/music-production-grey-min.jpg');
+	height: 120vh;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: black;
 }
-
 .music-info-wrap {
-    color: white;
-    padding: 100px 0 0 0;
+	color: white;
+	padding: 100px 0 0 0;
 }
-
 .music-header h2 {
-    text-align: center;
-    font-size: 40px;
-    margin: 20px 0;
-    
+	text-align: center;
+	font-size: 40px;
+	margin: 20px 0;
 }
-
 .music-info {
-    background: rgba(0,0,0,0.5);
-    margin: 0 150px ;
-    padding: 20px 150px; 
-    border-radius: 10px;
+	background: rgba(0, 0, 0, 0.5);
+	margin: 0 150px;
+	padding: 20px 150px;
+	border-radius: 10px;
 }
-
 .music-info p {
-    padding: 5px 0 5px 0;
-    font-size: 16px;
+	padding: 5px 0 5px 0;
+	font-size: 16px;
 }
-
 .spotify {
-    min-height: 100%;
+	min-height: 100%;
 }
-
 #music-content {
-   padding: 200px 0 0 0; 
-    color: white;
+	padding: 200px 0 0 0;
+	color: white;
 }
-
 .music-content-wrap {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
-
 .music-content-wrap h3 {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 900;
-    padding: 10px 0 20px 0;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 900;
+	padding: 10px 0 20px 0;
 }
 .music-content-wrap p {
-    
-    font-size: 16px;
-    padding: 5px 0 5px 0;
+	font-size: 16px;
+	padding: 5px 0 5px 0;
 }
-
 .small-wrap {
-    display: flex;
-    flex-direction: row;
-   
+	display: flex;
+	flex-direction: row;
 }
 .music-content-wrap-1 {
-    flex: 1;
-    border: 2px solid #818181;
-    min-height: 300px;
-    height: 100%;
-    margin: 0 5vw 20px 5vw;
-    background-color: rgba(0,0,0,0.7);
+	flex: 1;
+	border: 2px solid #818181;
+	min-height: 300px;
+	height: 100%;
+	margin: 0 5vw 20px 5vw;
+	background-color: rgba(0, 0, 0, 0.7);
 }
 .music-content-wrap-2 {
-    flex: 1;
-    border: 2px solid #818181;
-    background-color: rgba(255,255,255,0.7);
-    height: 100%;
-    color: black;
-    margin-bottom: 20px;
-    margin: 0 5vw 20px 5vw;
+	flex: 1;
+	border: 2px solid #818181;
+	background-color: rgba(255, 255, 255, 0.7);
+	height: 100%;
+	color: black;
+	margin-bottom: 20px;
+	margin: 0 5vw 20px 5vw;
 }
-
 .music-content-wrap-3 {
-    border: 2px solid #818181;
-    flex: 1;
-    background-color: rgba(0,0,0,0.7);
-    height: 100%;
-    min-height: 10px;
-    margin: 0 5vw 20px 5vw;
+	border: 2px solid #818181;
+	flex: 1;
+	background-color: rgba(0, 0, 0, 0.7);
+	height: 100%;
+	min-height: 10px;
+	margin: 0 5vw 20px 5vw;
 }
-
 .black {
-    text-align: center;
-    padding-bottom: 20px;
+	text-align: center;
+	padding-bottom: 20px;
 }
-
 .artist {
-    font-size: 18px;
-    padding: 0 0 15px 0;
+	font-size: 18px;
+	padding: 0 0 15px 0;
 }
-
-
-
 .music-content-1 {
-     flex: 1;
-   
-    height: 100%;
-    min-height: 10px;
-    padding: 10px;
-    margin: 0 10px;
-    
-    
+	flex: 1;
+	height: 100%;
+	min-height: 10px;
+	padding: 10px;
+	margin: 0 10px;
 }
-
 .music-content-2 {
-    text-align: center;
-     flex: 1;
-    
-    min-height: 100%;
-    padding: 10px;
-     margin: 0 10px;
+	text-align: center;
+	flex: 1;
+	min-height: 100%;
+	padding: 10px;
+	margin: 0 10px;
 }
 .music-content-3 {
-     flex: 1;
-    
-    height: 100%;
-    padding: 10px;
-     min-height: 0 10px;
-     margin: 0 10px;
+	flex: 1;
+	height: 100%;
+	padding: 10px;
+	min-height: 0 10px;
+	margin: 0 10px;
 }
-
-
 /* Iframe container
 ---------*/
 
 .iframe-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%;
+	height: 0;
 }
 .iframe-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-        
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
-
 /* CV
 -------------------*/
+
 .cv-wrap {
-    color: white;
-    padding: 100px 0 0 0;
-    
-    
+	color: white;
+	padding: 100px 0 0 0;
 }
-
 .cv-wrap p {
-   padding: 10px;
+	padding: 10px;
 }
-
 .cv-wrap h2 {
-    font-size: 50px;
-    text-align: center;
+	font-size: 50px;
+	text-align: center;
 }
-
 .education-wrap {
-    margin: 100px 0 0 20px;
-   
+	margin: 100px 0 0 20px;
 }
-
 .education-wrap h3 {
-    font-size: 30px;
-    text-align: left;
-    
+	font-size: 30px;
+	text-align: left;
 }
+/* About
+-------------------*/
 
+.about-wrap {
+	color: white;
+	padding: 100px 5vw 100px 5vw;
+	background-color: rgba(255, 255, 255, 0.2);
+	margin: 0 100px
+}
+.about-wrap h2 {
+	text-align: center;
+	font-size: 50px;
+	margin-bottom: 30px;
+}
+.about-wrap h3 {
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 30px;
+}
+.about-wrap p {
+	padding: 5px 10vw;
+	text-align: justify;
+}
 /* Contact
 -------------------*/
-/* Style inputs, select elements and textareas */
-input[type=text], select, textarea{
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  resize: vertical;
-}
 
+
+input[type=text],
+select,
+textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	resize: vertical;
+}
+.image-me {
+	text-align: center;
+	height: 200px;
+}
 .contact-header {
-    position: relative;
-    top: 200px;
-    margin: 0 10vw;
+	position: relative;
+	top: 200px;
+	margin: 0 10vw;
 }
 
-/* Style the label to display next to the inputs */
 label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
+	padding: 12px 12px 12px 0;
+	display: inline-block;
 }
 
-/* Style the submit button */
 input[type=submit] {
-  background-color: #818181;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
+	background-color: #818181;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
 }
-
 input[type=submit]:hover {
-    opacity: 0.7;
+	opacity: 0.7;
 }
 input[type=submit]:active {
-    opacity: 0.3;
+	opacity: 0.3;
 }
 
-/* Style the container */
 .container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
 }
 
-/* Floating column for labels: 25% width */
 .col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
+	float: left;
+	width: 25%;
+	margin-top: 6px;
 }
 
-/* Floating column for inputs: 75% width */
 .col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
+	float: left;
+	width: 75%;
+	margin-top: 6px;
 }
 
-/* Clear floats after the columns */
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
+	display: table;
+	clear: both;
 }
-
-
+.uno {
+	display: none;
+}
+.link {
+	border: 1px solid white;
+	padding: 0 5px;
+	margin: 0 5px;
+}
+.link:hover {
+	cursor: pointer;
+	background-color: white;
+	color: black;
+}
+.link:active {
+	opacity: 0.3;
+}
 /* Smaller screens
 -------------------*/
+
 @media screen and (max-width: 800px) {
- 
-    
-/* Smaller header
--------------------*/ 
-.header {
-}  
-header {       
-    margin: 0;
-    font-size: 20px;        
-}
-.nav-elements {
-    display: none;
-    }
-    
- a.icon {
-     float: right;  
-     display: block;
-     position:absolute;
-     padding: 15px;
-     right: 0;
-     top: 0;
-     margin: 0;   
-  }
- 
-/* Index page - smaller screen
--------------------*/     
-    
-    .firstpage {
-        height: 100vh;
-        
-    }
-    
-.firstcontentwrap {
-    flex-direction: column;
-    height: 100vh;
-    max-height: 100vh;
-    }   
-    
-.left {      
-    height: 50vh
-}
- 
-.right {
-   height: 50vh
-}    
- 
-#web-text {
-    transition: 0.5s;
-    margin-left: -1000px;
-     
-}
-
-#web-button {
-    transition: 0.5s;
-    margin-left: -1000px;
-   
-}    
-    
-#music-text {
-    transition: 0.5s;
-    margin-left: -1000px;
-   
-    
-}
-
-#music-button {
-    transition: 0.5s;
-   margin-left: -1000px;
-  
-}    
-    
-/* Sub headers smaller screen
-----------------*/      
- .web {
-     font-size: 20px;
-     position: relative;
-     top: 100px;
-     left: 30px;
-     font-weight: 900;  
-     transition: 0.5s;
-     max-width: 250px;
-    }
-.music {
-    font-size: 20px;
-    position: relative;
-    top: 100px;
-    left: 30px;
-    font-weight: 900;
-    transition: 0.5s;
-    max-width: 250px; 
-    }
-    
-
-.image {
-    
-} 
-
-/* Index text smaller screen
-----------------*/    
-.index-text {
-    position: absolute;
-    top: 180px;
-    max-width: 40vh;
-    min-width: 20vh;    
-    margin: 0 20px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.9);
-   
-}
-.p-text {
-    transition: 0.5s;
-    padding: 20px 20px 5px 20px;
-    font-size: 15px;
-}
-.p-text:last-child {
-    padding-bottom: 20px;
-}
-
-.web-button, .music-button {
-    position: absolute;
-    top: 85vh;
-    left: 5vw;
-    max-width: 40vh;
-    
-}
-.index-button {
-    background-color: white;
-    padding: 20px;
-    border-radius: 20px;
-    transition: 0.5s;
-    font-size: 15px;
-}
-
-.index-button:hover {
-   cursor: pointer;
-    opacity: 0.7;
-    
-}
-  
-/* Web developer page - smaller screens
+	/* Smaller header
 -------------------*/
-
-#web-content {
-    margin: 0 0vw;
-}
-
-.web-content-wrap {
-    display: flex;
-    flex-direction: row;  
-}
-
-.web-content-1 {
-    height: 100%;
-    margin: 8vh 0vh 15vh 0vw;
-    padding: 0 0 50px 0;
-    
-}
-
-.web-content-wrap h2 {
-    padding: 20px;
-    font-size: 20px;  
-}
-
-.web-content-wrap p:first-of-type {
-    padding: 10px 0 0 20px;
-}
-
-.web-content-wrap p:last-of-type {
-    text-align: left;
-}
-
-.web-content-wrap p {
-    padding: 10px 0 0 20px;
-    font-size: 16px;
-}
-
-.work-wrap {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.work1, .work2, .work3 {
-    height: 100%;
-    margin: 20px 20px 10px 20px;
-    padding: 0px;
-    min-height: 100px;
-    border-radius: 10px;
-}
-
-.web-button-web {
-    display:inline-block;
-    margin: 10px 5px 10px 5px;
-    padding: 10px 5px 10px 5px;
-    text-align: center;
-    border-radius: 10px;
-    font-size: 80%;
-}
-    
-
-
-.work-wrap h3 {
-    text-align: center;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: 900;
-}
-
-.work-wrap h4 {
-    text-align: center;
-}
-
-/* Got page
+	#header {} header {
+		margin: 0;
+		font-size: 20px;
+	}
+	.nav-elements {
+		display: none;
+	}
+	a.icon {
+		float: right;
+		display: block;
+		position: absolute;
+		padding: 15px;
+		right: 0;
+		top: 0;
+		margin: 0;
+	}
+	/* Index page - smaller screen
 -------------------*/
-
-#got-wrap {
-    display: flex;
-    height: 100vh;
-    border: 2px solid #818181; 
-}
-
-#got-a, #space-a, #decor-a {
-   
-    height: 60px; /* fixed header height*/
-  margin: -60px 0 0; /* negative fixed header height */
-}
-
-.got-flex {
-}
-
-.got-flex h2 {
-    text-align: center;
-    color: white;
-    font-size: 22px;
-    font-weight: 900;
-    padding: 20px 10px 10px 10px
-}
-
-.got-img-wrap {
-   text-align: center;
-    margin: 5px 5px 15px 5px;
-}
-
-.got-img {
-    height: 70px;
-    width: 70%;
-    
-}
-.got-text p{
-    color: white;
-    font-size: 20px;
-    padding: 5px;
-    text-align: center;
-    margin: 10px 0 0 0;
-}
-
-.go-to-button-wrap, .go-to-button-wrap-1, .go-to-button-wrap-2 {
-    text-align: center;
-    
-}
-.go-to-button {
-    padding: 5px 5px;
-    border-radius: 10px;   
-}
-
-.go-to-button-wrap-1 {
-   margin-top: 10px;
-}
-.go-to-button-wrap-2 {
-   margin-top: 30px;
-}
-
-.go-to-button-wrap-2 a {
-    margin-right: 10px;
-}
-
-.go-to-button:hover {
-    cursor: pointer;
-    opacity: 0.7;
-}
-
-.go-to-button:active {
-    opacity: 0.2;
-}
-
-#spacex-wrap {
-    display: flex;
-    height: 100vh;
-    border: 2px solid #818181; 
-    background-color: #818181
-}
-
-    
-.space-img {
-    width: 80%;
-    height: auto;    
-}    
-    .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-    
-    
-/* Music production page
+	.firstpage {
+		height: 100vh;
+	}
+	#firstcontentwrap {
+		flex-direction: column;
+		height: 100vh;
+		max-height: 100vh;
+	}
+	#left {
+		height: 50vh
+	}
+	#right {
+		height: 50vh
+	}
+	#web-text {
+		transition: 0.5s;
+		margin-left: -10000px;
+		*/
+	}
+	#web-button {
+		transition: 0.5s;
+		margin-left: -10000px;
+		*/
+	}
+	#music-text {
+		transition: 0.5s;
+		margin-left: -10000px;
+	}
+	#music-button {
+		transition: 0.5s;
+		margin-left: -10000px;
+	}
+	/* Sub headers smaller screen
+----------------*/
+	#web {
+		font-size: 20px;
+		position: relative;
+		top: 100px;
+		left: 30px;
+		font-weight: 900;
+		transition: 0.5s;
+		max-width: 250px;
+	}
+	#music {
+		font-size: 20px;
+		position: relative;
+		top: 100px;
+		left: 30px;
+		font-weight: 900;
+		transition: 0.5s;
+		max-width: 250px;
+	}
+	.image {}
+	/* Index text smaller screen
+----------------*/
+	.index-text {
+		position: absolute;
+		top: 180px;
+		max-width: 40vh;
+		min-width: 20vh;
+		margin: 0 20px;
+		border-radius: 20px;
+		background: rgba(255, 255, 255, 0.9);
+	}
+	.p-text {
+		transition: 0.5s;
+		padding: 20px 20px 5px 20px;
+		font-size: 15px;
+	}
+	.p-text:last-child {
+		padding-bottom: 20px;
+	}
+	.web-button,
+	.music-button {
+		position: absolute;
+		top: 85vh;
+		left: 5vw;
+		max-width: 40vh;
+	}
+	.index-button {
+		background-color: white;
+		padding: 20px;
+		border-radius: 20px;
+		transition: 0.5s;
+		font-size: 15px;
+	}
+	.index-button:hover {
+		cursor: pointer;
+		opacity: 0.7;
+	}
+	/* Web developer page - smaller screens
 -------------------*/
-.bg-music-image {
-    height: 100vh;
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat; 
-}
-
-.music-info-wrap {
-    color: white;
-    padding: 100px 0 0 0;
-}
-
-.music-header h2 {
-    text-align: center;
-    font-size: 40px;
-    margin: 20px 0;
-    
-}
-
-.music-info {
-    background: rgba(0,0,0,0.5);
-    margin: 0 0px ;
-    padding: 20px 20px; 
-    border-radius: 10px;
-}
-
-.music-info p {
-    padding: 5px 0 5px 0;
-    font-size: 16px;
-}
-
-
-#music-content {
-   padding: 100px 0 0 0; 
-}
-
-.music-content-wrap {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.music-content-wrap h3 {
-    font-size: 20px;
-}
-.music-content-wrap p {
-    font-size: 16px;
-    padding: 5px 0 5px 0;
-}
-
-.small-wrap {
-    display: flex;
-    flex-direction: column;
-   
-}
-.music-content-wrap-1 {
-    flex: 1;
-    border: 2px solid #818181;
-    min-height: 300px;
-    height: 100%;
-    margin: 0 5vw 20px 5vw;
-    background-color: rgba(0,0,0,0.7);
-    flex-direction: column;
-}
-.music-content-wrap-2 {
-    flex: 1;
-    border: 2px solid #818181;
-    background-color: rgba(255,255,255,0.7);
-    height: 100%;
-    color: black;
-    margin-bottom: 20px;
-    margin: 0 5vw 20px 5vw;
-}
-
-.music-content-wrap-3 {
-    border: 2px solid #818181;
-    flex: 1;
-    background-color: rgba(0,0,0,0.7);
-    height: 100%;
-    min-height: 10px;
-    margin: 0 5vw 20px 5vw;
-}
-
-.music-content-1 {
-     flex: 1;
-    height: 100%;
-    min-height: 10px;
-    padding: 10px;
-    margin: 10px 10px; 
-    
-}
-
-.music-content-2 {
-    text-align: center;
-     flex: 1;
-    
-    min-height: 100%;
-    padding: 10px;
-     margin: 10px 10px;
-}
-.music-content-3 {
-     flex: 1;
-    height: 100%;
-    padding: 10px;
-     min-height: 0 10px;
-     margin: 10px 10px;
-}
-
-
-/* Iframe container
+	#web-content {
+		margin: 0 0vw;
+	}
+	.web-content-wrap {
+		display: flex;
+		flex-direction: row;
+	}
+	.web-content-1 {
+		height: 100%;
+		margin: 8vh 0vh 15vh 0vw;
+		padding: 0 0 50px 0;
+	}
+	.web-content-wrap h2 {
+		padding: 20px;
+		font-size: 20px;
+	}
+	.web-content-wrap p:first-of-type {
+		padding: 10px 0 0 20px;
+	}
+	.web-content-wrap p:last-of-type {
+		text-align: left;
+	}
+	.web-content-wrap p {
+		padding: 10px 0 0 20px;
+		font-size: 16px;
+	}
+	.work-wrap {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+	.work1,
+	.work2,
+	.work3 {
+		height: 100%;
+		margin: 20px 20px 10px 20px;
+		padding: 0px;
+		min-height: 100px;
+		border-radius: 10px;
+	}
+	.web-button-web {
+		display: inline-block;
+		margin: 10px 5px 10px 5px;
+		padding: 10px 5px 10px 5px;
+		text-align: center;
+		border-radius: 10px;
+		font-size: 80%;
+	}
+	.work-wrap h3 {
+		text-align: center;
+		padding: 10px;
+		font-size: 20px;
+		font-weight: 900;
+	}
+	.work-wrap h4 {
+		text-align: center;
+	}
+	/* Got page
+-------------------*/
+	#got-wrap {
+		display: flex;
+		height: 100vh;
+		border: 2px solid #818181;
+	}
+	#got-a,
+	#space-a,
+	#decor-a {
+		height: 60px;
+		margin: -60px 0 0;
+	}
+	.got-flex {} .got-flex h2 {
+		text-align: center;
+		color: white;
+		font-size: 22px;
+		font-weight: 900;
+		padding: 20px 10px 10px 10px
+	}
+	.got-img-wrap {
+		text-align: center;
+		margin: 5px 5px 15px 5px;
+	}
+	.got-img {
+		width: 70%;
+	}
+	.got-text p {
+		color: white;
+		font-size: 20px;
+		padding: 5px;
+		text-align: center;
+		margin: 10px 0 0 0;
+	}
+	.go-to-button-wrap,
+	.go-to-button-wrap-1,
+	.go-to-button-wrap-2 {
+		text-align: center;
+	}
+	.go-to-button {
+		padding: 5px 5px;
+		border-radius: 10px;
+	}
+	.go-to-button-wrap-1 {
+		margin-top: 10px;
+	}
+	.go-to-button-wrap-2 {
+		margin-top: 30px;
+	}
+	.go-to-button-wrap-2 a {
+		margin-right: 10px;
+	}
+	.go-to-button:hover {
+		cursor: pointer;
+		opacity: 0.7;
+	}
+	.go-to-button:active {
+		opacity: 0.2;
+	}
+	#spacex-wrap {
+		display: flex;
+		height: 100vh;
+		border: 2px solid #818181;
+		background-color: #818181
+	}
+	.space-img {
+		width: 80%;
+		height: auto;
+	}
+	.uno {
+		display: none;
+	}
+	.col-25,
+	.col-75,
+	input[type=submit] {
+		width: 100%;
+		margin-top: 0;
+	}
+	/* Music production page
+-------------------*/
+	.bg-music-image {
+		height: 100vh;
+		background-position: top;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.music-info-wrap {
+		color: white;
+		padding: 100px 0 0 0;
+	}
+	.music-header h2 {
+		text-align: center;
+		font-size: 40px;
+		margin: 20px 0;
+	}
+	.music-info {
+		background: rgba(0, 0, 0, 0.5);
+		margin: 0 0px;
+		padding: 20px 20px;
+		border-radius: 10px;
+	}
+	.music-info p {
+		padding: 5px 0 5px 0;
+		font-size: 16px;
+	}
+	#music-content {
+		padding: 100px 0 0 0;
+	}
+	.music-content-wrap {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	.music-content-wrap h3 {
+		font-size: 20px;
+	}
+	.music-content-wrap p {
+		font-size: 16px;
+		padding: 5px 0 5px 0;
+	}
+	.small-wrap {
+		display: flex;
+		flex-direction: column;
+	}
+	.music-content-wrap-1 {
+		flex: 1;
+		border: 2px solid #818181;
+		min-height: 300px;
+		height: 100%;
+		margin: 0 5vw 20px 5vw;
+		background-color: rgba(0, 0, 0, 0.7);
+		flex-direction: column;
+	}
+	.music-content-wrap-2 {
+		flex: 1;
+		border: 2px solid #818181;
+		background-color: rgba(255, 255, 255, 0.7);
+		height: 100%;
+		color: black;
+		margin-bottom: 20px;
+		margin: 0 5vw 20px 5vw;
+	}
+	.music-content-wrap-3 {
+		border: 2px solid #818181;
+		flex: 1;
+		background-color: rgba(0, 0, 0, 0.7);
+		height: 100%;
+		min-height: 10px;
+		margin: 0 5vw 20px 5vw;
+	}
+	.music-content-1 {
+		flex: 1;
+		height: 100%;
+		min-height: 10px;
+		padding: 10px;
+		margin: 10px 10px;
+	}
+	.music-content-2 {
+		text-align: center;
+		flex: 1;
+		min-height: 100%;
+		padding: 10px;
+		margin: 10px 10px;
+	}
+	.music-content-3 {
+		flex: 1;
+		height: 100%;
+		padding: 10px;
+		min-height: 0 10px;
+		margin: 10px 10px;
+	}
+	/* Iframe container
 ---------*/
+	.iframe-container {
+		position: relative;
+		width: 100%;
+		padding-bottom: 56.25%;
+		height: 0;
+	}
+	.iframe-container iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	/* About
+-------------------*/
+	.about-wrap {
+		color: white;
+		padding: 100px 0 100px 0;
+		background-color: black;
+		margin: 0 0;
+	}
+	.about-wrap h2 {
+		text-align: center;
+		font-size: 40px;
+		margin-bottom: 20px;
+	}
+	.about-wrap h3 {
+		text-align: center;
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	.image-me {
+		max-width: 90%;
+		max-height: 90%;
+		margin: 10px;
+	}
 
-.iframe-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
 }
-.iframe-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-        
-}    
-/*.web {
-    color: black;
-    z-index: 2;
-    font-size: 40px;
-    position: relative;
-    top: 80px;
-    left: 30px;
-    max-width: 300px;
-    font-size: 25px;
-}
-.music {
-    color: black;
-    z-index: 2;
-    font-size: 40px;
-    position: relative;
-    top: 80px;
-    left: 30px;
-    max-width: 300px;
-    font-size: 25px;
-}*/
-    
-}
-
-
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-
-/*
-@media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-
-    
-}
-*/
